@@ -1,0 +1,255 @@
+/* Notes page specific styles */
+
+/* Container & Content */
+.notes-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fixed header section */
+.filters-container {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+/* Search input container */
+.search-container {
+  flex: 1 1 250px;
+  min-width: 200px;
+  height: 36px;
+  position: relative;
+}
+
+.search-input {
+  height: 36px;
+  padding: 0 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+/* View toggle */
+.view-toggle {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* New Note Button */
+.new-note-btn {
+  margin-left: auto;
+  text-decoration: none !important;
+}
+
+.view-toggle-button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.view-toggle-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.view-toggle-button:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.view-toggle-button.active {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: var(--primary-light);
+}
+
+/* Notes Content Area */
+.notes-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Grid View */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.note-card.grid {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: var(--theme-transition);
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.note-card.grid:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+/* List View */
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.note-card.list {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: var(--theme-transition);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.note-card.list:hover {
+  border-color: var(--primary-light);
+  background: var(--surface-2);
+}
+
+/* Common Note Card Styles */
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  gap: 16px;
+}
+
+.note-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-date {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.note-date svg {
+  font-size: 12px;
+}
+
+.note-content-snippet {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+/* Ensure links within snippet are styled correctly */
+.note-content-snippet a {
+  color: var(--primary-main);
+  text-decoration: underline;
+}
+
+/* Modern scrollbar styling */
+.notes-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.notes-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.notes-content::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.notes-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Firefox scrollbar styling */
+.notes-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-2) transparent;
+}
+
+/* Hide scrollbar when not scrolling but keep functionality */
+@media (hover: hover) {
+  .notes-content::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+  .notes-content:hover::-webkit-scrollbar-thumb {
+    background: var(--surface-2);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .view-toggle {
+    justify-content: center;
+  }
+
+  .action-button.primary {
+    width: 100%;
+  }
+
+  .note-card.list {
+    margin: 0;
+  }
+} 

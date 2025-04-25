@@ -1,0 +1,60 @@
+.task-column {
+  /* Inherit from .component-card */
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-column-header {
+  /* Inherit from .component-card-header */
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.task-column-title {
+  /* Inherit from .component-card-title */
+  flex: 1;
+}
+
+.task-count {
+  /* Inherit from .badge */
+  background-color: var(--surface-2);
+  color: var(--text-secondary);
+}
+
+.task-list {
+  /* Inherit from .component-card-body */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 100px;
+  padding: 16px;
+}
+
+.task-column.dragging-over {
+  background-color: var(--surface-2);
+  box-shadow: var(--shadow-md);
+}
+
+.add-task-button {
+  /* Inherit from .action-button.primary */
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.empty-column {
+  /* Inherit from .empty-state */
+  text-align: center;
+  font-size: 14px;
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  margin-top: 8px;
+} 

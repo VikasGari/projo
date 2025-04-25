@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "./styles/theme.css";
+@import "./styles/pages.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app {
+  display: flex;
+  font-family: Nunito;
+  transition: var(--theme-transition);
+  background-color: var(--background);
+  color: var(--text-primary);
+  padding: 10px;
+  height: 100vh; /* Take full viewport height */
+  width: 100vw; /* Take full viewport width */
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+.sidebar {
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  min-width: 250px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  height: calc(100vh - 20px); /* Adjust to fit viewport with padding */
+  overflow: hidden;
+}
+
+.sidebar.closed {
+  display: none;
+}
+
+.sidebar > * {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.head {
+  background: var(--surface-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 41px;
+  border: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 16px;
+  color: var(--text-primary);
+}
+
+.logo > * {
+  font-size: 30px;
+}
+
+.close {
+  display: none;
+}
+
+.prof {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--surface-2);
+  padding: 16px;
+  gap: 8px;
+  border: 1px solid var(--border);
+}
+
+.prof h2 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+}
+
+.prof p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.prof-img {
+  background-color: var(--surface-2);
+  width: 5em;
+  height: 5em;
+  border-radius: 100%;
+  border: 2px solid var(--border);
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  flex-wrap: nowrap;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow-y: auto; /* Allow scrolling for many links */
+}
+
+.nav-links > * {
+  all: unset;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  transition: var(--theme-transition);
+}
+
+.nav-links > *:hover {
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+.active-link {
+  background-color: var(--primary-main) !important;
+  color: var(--primary-contrast) !important;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  background: var(--background); /* Changed to background for transparency */
+  flex: 1;
+  margin-left: 10px;
+  border-radius: 10px;
+  height: calc(100vh - 20px); /* Adjust to fit viewport with padding */
+  overflow: hidden;
+}
+
+.container {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-2);
+  border-radius: 10px;
+  margin: 0 10px 10px 10px;
+  border: 1px solid var(--border);
+  overflow-y: auto; /* Allow scrolling for content */
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  gap: 12px;
+}
+
+.filters > * {
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 14px;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  transition: var(--theme-transition);
+}
+
+.filters > *:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+svg {
+  font-size: x-large;
+  color: var(--text-secondary);
+}
+
+.item {
+  width: 30%;
+}
+
+.btgrid, .btlist {
+  width: fit-content;
+}
+
+.true{
+    color: aliceblue;
+    background-color: black;
+}
+
+@media (max-width: 768px) {
+  .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .close > svg {
+    font-size: xx-large;
+  }
+  
+  .sidebar.closed {
+    display: none;
+  }
+  
+  .content {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    margin-left: 0;
+    z-index: 1;
+  }
+  
+  .sidebar.open ~ .content * {
+    pointer-events: none;
+  }
+  
+  .sidebar.open ~ .content {
+    filter: blur(2px);
+  }
+}

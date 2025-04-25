@@ -1,0 +1,897 @@
+/* Custom styles specific to contacts */
+
+/* Keep specific list/card styles */
+.contact-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--theme-transition);
+  height: auto;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.contact-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-dark);
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.contact-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-info h3 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Use .badge .badge-info from pages.css */
+.contact-tag {
+  /* Inherit from .badge .badge-info */
+  padding: 3px 8px;
+  font-size: 11px;
+}
+
+.contact-tags {
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.contact-details {
+  margin-top: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.contact-detail-item svg {
+  font-size: 14px; /* Standard Detail Icon Size */
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.contact-actions {
+  position: relative; /* Needed for absolute positioning of menu */
+}
+
+/* Use .action-button from pages.css */
+.contact-action-btn {
+  /* Inherit from .action-button */
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Modal specific styles */
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-full-width {
+  grid-column: span 2;
+}
+
+/* Keep tags input styles */
+.tags-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  background-color: var(--surface);
+}
+
+.tag-item {
+  /* Inherit from .badge .badge-primary */
+  padding: 4px 8px;
+  font-size: 12px;
+  gap: 6px;
+}
+
+.tag-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+  padding: 4px;
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.remove-tag-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* Removed .contacts-container, .contacts-header, .contacts-actions, .search-container, .contacts-content */
+/* Removed .view-toggle, .dropdown-container, .add-contact-btn */
+/* Removed .error-message, .loading, .empty-state (use common classes from pages.css) */
+/* Removed general modal styles (use common classes from pages.css) */
+/* Removed general responsive styles */
+
+/* List View Specific Styles */
+.contact-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-list-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: var(--theme-transition);
+  width: 100%;
+  gap: 16px;
+}
+
+.contact-list-item:hover {
+  border-color: var(--primary-light);
+  background: var(--surface-2);
+}
+
+.contact-list-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.contact-list-info {
+  flex: 2;
+  min-width: 0;
+}
+
+.contact-list-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.contact-list-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.contact-list-details {
+  flex: 3;
+  display: flex;
+  gap: 24px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  align-items: center;
+}
+
+.contact-list-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-list-detail svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+}
+
+.contact-list-tags {
+  flex: 2;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.contact-list-actions {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* When menu is open, increase z-index */
+.contact-list-actions.menu-open {
+  z-index: 100;
+}
+
+/* Action Menu Button */
+.contact-menu-button {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--theme-transition);
+  border-radius: 6px;
+}
+
+.contact-menu-button:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.contact-menu-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Action Menu Dropdown */
+.contact-actions-menu {
+  position: absolute;
+  top: calc(100% - 4px); /* Position closer to button */
+  right: -8px; /* Align with button */
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  min-width: 160px;
+  padding: 4px 0;
+  overflow: hidden;
+}
+
+.contact-actions-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 12px;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--theme-transition);
+  box-sizing: border-box;
+}
+
+.contact-actions-menu-item:hover {
+  background: var(--surface-2);
+}
+
+.contact-actions-menu-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.contact-actions-menu-item.delete {
+  color: var(--error-main);
+}
+
+.contact-actions-menu-item.delete:hover {
+  background: var(--error-light);
+  color: var(--error-dark);
+}
+
+/* Grid View Specific Styles */
+.contact-grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.contact-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: var(--theme-transition);
+}
+
+.contact-card:hover {
+  border-color: var(--primary-light);
+  background: var(--surface-2);
+}
+
+.contact-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.contact-card-avatar-info {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-card .contact-list-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+.contact-card .contact-menu-button {
+  margin: -8px -8px 0 0;
+}
+
+/* Contacts Page Specific Styles */
+
+/* Container & Content */
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; /* Prevent outer scroll */
+}
+
+/* Fixed header section */
+.contacts-actions.filters-container {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Scrollable content area */
+.contacts-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* Modern scrollbar styling */
+.contacts-content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.contacts-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.contacts-content::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.contacts-content::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Firefox scrollbar styling */
+.contacts-content {
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-2) transparent;
+}
+
+/* Hide scrollbar when not scrolling but keep functionality */
+@media (hover: hover) {
+  .contacts-content::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+  .contacts-content:hover::-webkit-scrollbar-thumb {
+    background: var(--surface-2);
+  }
+}
+
+/* Controls */
+.contacts-actions.filters-container {
+  margin-bottom: 20px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Search input container */
+.search-container {
+  flex: 1 1 250px;
+  min-width: 200px;
+  height: 36px;
+}
+
+.search-container input {
+  height: 36px;
+  padding: 0 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-primary);
+}
+
+/* View toggle */
+.contacts-actions .view-toggle {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.contacts-actions .view-toggle-button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--theme-transition);
+}
+
+.contacts-actions .view-toggle-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.contacts-actions .view-toggle-button:hover {
+  background: var(--surface-2);
+  color: var(--text-primary);
+}
+
+.contacts-actions .view-toggle-button.active {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border-color: var(--primary-light);
+}
+
+/* Action buttons */
+.contacts-actions .page-actions {
+  flex-shrink: 0;
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.contacts-actions .page-actions .action-button,
+.contacts-actions .page-actions button {
+  height: 30px;
+  padding: 0 12px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.contacts-actions .page-actions .action-button:hover,
+.contacts-actions .page-actions button:hover {
+  background: var(--surface-2);
+}
+
+.contacts-actions .page-actions .action-button.primary,
+.contacts-actions .page-actions button.primary {
+  background: var(--primary-main);
+  color: var(--primary-contrast);
+  border-color: var(--primary-main);
+}
+
+.contacts-actions .page-actions .action-button.primary:hover,
+.contacts-actions .page-actions button.primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Dropdown Menu (Import/Export) - Improve positioning and use common styles */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  background-color: var(--surface);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+  min-width: 200px;
+  z-index: 100;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.dropdown-section:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+.dropdown-header {
+  padding: 4px 16px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: var(--theme-transition);
+}
+
+.dropdown-item:hover {
+  background-color: var(--surface-2);
+}
+
+.dropdown-item svg {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Grid View (using common .grid-container) */
+.contact-grid-items {
+  /* Inherits from .grid-container */
+  flex-grow: 1; /* Allow grid to fill available space */
+  width: 100%; /* Ensure it takes full width */
+}
+
+/* Grid Item Card */
+.contact-card {
+  /* Inherits from .card */
+  height: auto;
+  min-height: 220px;
+}
+
+.contact-card-header {
+  display: flex;
+  /* align-items: center; Changed to flex-start for better top-right positioning */
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between; /* Keep space between avatar/info and actions */
+  margin-bottom: 12px;
+  position: relative; /* Make it a positioning context for actions */
+}
+
+.contact-card-avatar {
+  /* Inherit from .avatar */
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.contact-card-info {
+  flex: 1;
+  min-width: 0; /* Prevent overflow */
+}
+
+.contact-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-card-subtitle {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-card-tags {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.contact-card-details {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-card-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.contact-card-detail-item svg {
+  font-size: 16px;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.contact-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto; /* Push to bottom */
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.contact-action-btn {
+  /* Inherit from .action-button */
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* List View */
+.contact-list-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; /* Ensure list container takes full width */
+  flex-grow: 1; /* Allow list to fill available space */
+}
+
+.contact-list-info {
+  /* flex: 1; Remove flex property */
+  margin-right: auto; /* Push subsequent items to the right */
+  min-width: 0; /* Prevent overflow */
+}
+
+.contact-list-details {
+  /* flex: 2; Remove flex property */
+  min-width: 0; /* Prevent overflow */
+  display: flex;
+  flex-wrap: nowrap; /* Prevent details from wrapping */
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.contact-list-tags {
+  /* flex: 1; Remove flex property */
+  min-width: 0; /* Prevent overflow */
+  display: flex;
+  flex-wrap: nowrap; /* Prevent tags from wrapping */
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.contact-list-actions {
+  margin-left: 16px; /* Space before actions */
+  /* Removed positioning context, should align via parent flex */
+  position: static; /* Override relative positioning if inherited */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* --- View Toggle Specific Styles --- */
+.view-toggle-button svg {
+    font-size: 18px; /* Specific size for view toggle icons */
+}
+
+/* --- Tags Input (Modal) --- */
+.tags-input-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  background-color: var(--surface);
+}
+
+.tag-item {
+  /* Inherit from .badge .badge-primary */
+}
+
+.tag-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  min-width: 100px;
+  padding: 4px;
+  background-color: transparent;
+  color: var(--text-primary);
+}
+
+.remove-tag-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .contact-list-details {
+    /* flex: 1.5; Remove flex property */
+    gap: 12px; /* Reduce gap */
+  }
+  .contact-list-tags {
+    /* flex: 1.5; Remove flex property */
+    gap: 4px; /* Reduce gap */
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card-header {
+    flex-direction: row; /* Keep row layout */
+    align-items: center; /* Center items vertically again */
+  }
+  .contact-card-header .contact-actions {
+     position: static; /* Reset position */
+     margin-top: 0;
+     border-top: none;
+     padding-top: 0;
+  }
+  .contact-list-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-list-info {
+    width: 100%; /* Take full width */
+    margin-right: 0; /* Remove auto margin */
+    margin-bottom: 8px;
+  }
+  .contact-list-details {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+  .contact-list-tags {
+    width: 100%;
+    margin-top: 12px;
+  }
+  .contact-list-actions {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  .contact-menu-button {
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-full-width {
+    grid-column: span 1;
+  }
+  .contacts-actions.filters-container {
+    /* Stack controls vertically on small screens */
+    /* display: block; Remove flex for simple stacking if needed */
+  }
+  .search-container {
+    flex-basis: 100%; /* Search takes full width */
+  }
+  .page-actions {
+    margin-left: 0; /* Remove auto margin */
+    width: 100%; /* Make actions take full width */
+    display: flex; /* Arrange buttons inside */
+    gap: 8px;
+  }
+  .page-actions .dropdown-container {
+    flex-grow: 1; /* Allow dropdown button to grow */
+  }
+  .page-actions .action-button.primary {
+    flex-grow: 1; /* Allow add button to grow */
+  }
+} 

@@ -1,0 +1,292 @@
+.profile-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.profile-tabs {
+  display: flex;
+  padding: 0 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-tabs button {
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #666;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.profile-tabs button.active {
+  color: #2196f3;
+  border-bottom-color: #2196f3;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.profile-picture-container {
+  position: relative;
+  width: 150px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.update-picture-btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.profile-info .email {
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.profile-info .joined-date {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.profile-bio {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.profile-bio h3 {
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.bio-edit textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.bio-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.bio-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bio-actions button:first-child {
+  background: #2196f3;
+  color: white;
+}
+
+.bio-actions button:last-child {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.send-request-btn,
+.pending-btn,
+.friend-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.send-request-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.send-request-btn:hover {
+  background: #1976d2;
+}
+
+.pending-btn,
+.friend-btn {
+  background: #f1f1f1;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.requests-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.requests-section {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.requests-section h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.request-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.request-item:last-child {
+  margin-bottom: 0;
+}
+
+.request-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.request-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.request-info span {
+  color: #333;
+  font-weight: 500;
+}
+
+.request-info small {
+  color: #888;
+}
+
+.request-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.accept-btn,
+.reject-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.accept-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.reject-btn {
+  background: #f44336;
+  color: white;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #f44336;
+} 

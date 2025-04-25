@@ -1,0 +1,61 @@
+/* Layout Styles */
+.app {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
+  background-color: var(--background);
+}
+
+/* Sidebar */
+.sidebar {
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  min-width: 250px;
+  max-width: 250px;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  height: calc(100vh - 20px);
+  overflow: hidden;
+}
+
+/* Content area */
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  height: calc(100vh - 20px);
+}
+
+.container {
+  flex: 1;
+  overflow-y: auto;
+  height: calc(100% - 64px); /* Assuming header height is 64px */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar.open {
+    position: absolute;
+    z-index: 10;
+    height: calc(100vh - 20px);
+  }
+  
+  .content {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .sidebar.open ~ .content {
+    filter: blur(2px);
+  }
+} 

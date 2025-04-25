@@ -1,0 +1,285 @@
+.teams-wrapper {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Grid View */
+.teams-wrapper.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* List View */
+.teams-wrapper.list {
+    display: block;
+}
+
+.team-tile {
+    background: var(--surface);
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--theme-transition);
+    border: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+
+/* Grid View */
+.team-tile.grid {
+    width: 100%;
+    text-align: center;
+}
+
+/* List View */
+.team-tile.list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    gap: 20px;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.team-admin-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
+.team-members {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.team-member-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
+/* Team card styling (assuming this is used within the grid) */
+.team-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    transition: var(--theme-transition);
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.team-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 8px 0;
+}
+
+.team-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0 0 16px 0;
+}
+
+.team-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+/* Re-use .avatar-group from pages.css if possible */
+.team-card .team-members {
+    display: flex;
+    margin-top: auto; /* Push to bottom */
+}
+
+.member-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    margin-right: -8px;
+    border: 2px solid var(--surface);
+    object-fit: cover;
+}
+
+.team-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+/* Use .action-button classes from pages.css */
+.team-action-btn {
+    /* Inherit from .action-button */
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.team-action-btn:hover {
+    transform: translateY(-2px);
+}
+
+.team-action-btn.primary {
+    /* Inherit from .action-button.primary */
+}
+
+.team-action-btn.danger {
+    /* Inherit from .action-button.error */
+}
+
+/* Removed .teams-page, .teams-header, .teams-controls, .teams-search, .view-toggle, .teams-filters, .teams-grid */
+/* Removed related media query overrides */
+
+/* List View Styles */
+.teams-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.team-list-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: var(--theme-transition);
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.team-list-item:hover {
+  background: var(--surface-hover);
+  border-color: var(--primary-light);
+}
+
+.team-list-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.team-list-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.team-list-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-list-title h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-list-title p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.team-list-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 60px;
+}
+
+.meta-item.admin {
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.meta-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-list-meta {
+    gap: 1rem;
+  }
+  
+  .meta-item {
+    min-width: 50px;
+  }
+  
+  .meta-value {
+    font-size: 0.85rem;
+  }
+  
+  .meta-label {
+    font-size: 0.7rem;
+  }
+}
+
+.teams-grid a,
+.teams-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  overflow-y: auto;
+}

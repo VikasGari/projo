@@ -1,0 +1,506 @@
+.dashboard-container {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: min-content;
+}
+
+.widgets-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  width: 100%;
+}
+
+.widget-wrapper {
+  flex: 1 1 calc(25% - 18px);
+  max-width: calc(25% - 18px);
+}
+
+/* Widget header with action button */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.widget-title {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Upcoming Events styles */
+.widget-wrapper.upcoming-events {
+  flex: 1 1 calc(50% - 18px);
+  max-width: calc(50% - 18px);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.event-item {
+  padding: 12px;
+  background-color: var(--surface-2);
+  border-radius: 8px;
+  transition: var(--theme-transition);
+}
+
+.event-item:hover {
+  transform: translateX(4px);
+}
+
+.event-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.event-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Pinned Projects styles */
+.widget-wrapper.pinned-projects {
+  flex: 1 1 calc(25% - 18px);
+  max-width: calc(25% - 18px);
+}
+
+.pinned-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pinned-project-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--surface-2);
+  border-radius: 6px;
+  transition: var(--theme-transition);
+}
+
+.pinned-project-item:hover {
+  transform: translateX(4px);
+}
+
+.project-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  flex: 1;
+}
+
+.unpin-button {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.pinned-project-item:hover .unpin-button {
+  opacity: 1;
+}
+
+/* Quick Access styles */
+.widget-wrapper.quick-access {
+  flex: 1 1 calc(25% - 18px);
+  max-width: calc(25% - 18px);
+}
+
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.quick-action-button {
+  width: 100%;
+  justify-content: flex-start;
+  text-transform: none !important;
+  padding: 8px 16px !important;
+  border-color: var(--border) !important;
+  color: var(--text-primary) !important;
+}
+
+.quick-action-button:hover {
+  background-color: var(--surface-2) !important;
+  border-color: var(--primary) !important;
+}
+
+/* Empty state styles */
+.no-events,
+.no-pinned {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+}
+
+/* Mini Note specific styles */
+.widget-wrapper.mini-note {
+  flex: 1 1 calc(50% - 18px);
+  max-width: calc(50% - 18px);
+}
+
+/* Weekly Activity Graph styles */
+.widget-wrapper.weekly-activity {
+  flex: 1 1 calc(75% - 18px);
+  max-width: calc(75% - 18px);
+}
+
+/* Time Widgets Container styles */
+.widget-wrapper.time-widgets-container {
+  flex: 1 1 calc(25% - 18px);
+  max-width: calc(25% - 18px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.time-widget-half {
+  flex: 1;
+  min-height: 0;
+}
+
+.time-widget-half .widget {
+  height: 100%;
+}
+
+.time-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.time-display {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  font-family: monospace;
+  background-color: var(--surface-2);
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.time-display.large {
+  font-size: 36px;
+  padding: 16px 28px;
+}
+
+.mini-note-input {
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--surface-2);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  resize: none;
+  outline: none;
+  transition: var(--theme-transition);
+}
+
+.mini-note-input:focus {
+  box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.mini-note-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.widget {
+  background-color: var(--surface);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  min-height: 100px;
+  transition: var(--theme-transition);
+  box-sizing: border-box;
+}
+
+.widget:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.widget-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: var(--surface-2);
+  transition: var(--theme-transition);
+}
+
+.stat-item:hover {
+  background-color: var(--surface-2);
+  transform: translateX(4px);
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* Project status colors */
+.stat-value.ongoing {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.stat-value.completed {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
+.stat-value.future {
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+}
+
+/* Task status colors */
+.stat-value.todo {
+  background-color: var(--error-light);
+  color: var(--error-dark);
+}
+
+.stat-value.assigned {
+  background-color: var(--secondary-light);
+  color: var(--secondary-dark);
+}
+
+.stat-value.in-review {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+/* Responsive styles */
+@media (max-width: 1400px) {
+  .widget-wrapper {
+    flex: 1 1 calc(50% - 12px);
+    max-width: calc(50% - 12px);
+  }
+
+  .widget-wrapper.mini-note,
+  .widget-wrapper.weekly-activity {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .widget-wrapper.time-widgets-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    flex-direction: row;
+  }
+
+  .time-widget-half {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+
+  .widgets-row {
+    gap: 16px;
+  }
+
+  .widget-wrapper,
+  .widget-wrapper.mini-note,
+  .widget-wrapper.weekly-activity,
+  .widget-wrapper.time-widgets-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .widget-wrapper.time-widgets-container {
+    flex-direction: column;
+  }
+
+  .time-widget-half {
+    flex: 1;
+  }
+
+  .time-display {
+    font-size: 24px;
+    padding: 8px 16px;
+  }
+
+  .time-display.large {
+    font-size: 32px;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .widgets-row {
+    gap: 12px;
+  }
+
+  .widget-wrapper,
+  .widget-wrapper.mini-note,
+  .widget-wrapper.weekly-activity,
+  .widget-wrapper.time-widgets-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 14px;
+  }
+
+  .time-display {
+    font-size: 20px;
+    padding: 6px 12px;
+  }
+
+  .time-display.large {
+    font-size: 28px;
+    padding: 8px 16px;
+  }
+}
+
+/* Chart styles */
+.custom-tooltip {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.custom-tooltip p {
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.custom-tooltip p:first-child {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+/* Chart text styles */
+.recharts-cartesian-axis-tick-value {
+  fill: var(--text-secondary);
+  font-size: 12px;
+}
+
+.recharts-cartesian-grid line {
+  stroke: var(--border);
+  opacity: 0.5;
+}
+
+.widget-wrapper.weekly-activity .widget-content {
+  padding: 0;
+  margin-top: -8px;
+}
+
+/* Full Screen Clock styles */
+.fullscreen-clock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.fullscreen-close {
+  position: absolute !important;
+  top: 24px;
+  right: 24px;
+  color: var(--text-primary) !important;
+}
+
+.fullscreen-time {
+  font-family: monospace;
+  font-size: 12vw;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.fullscreen-date {
+  font-size: 2vw;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.fullscreen-instructions {
+  font-size: 1vw;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .fullscreen-time {
+    font-size: 16vw;
+  }
+
+  .fullscreen-date {
+    font-size: 4vw;
+  }
+
+  .fullscreen-instructions {
+    font-size: 3vw;
+  }
+
+  .fullscreen-close {
+    top: 16px;
+    right: 16px;
+  }
+} 

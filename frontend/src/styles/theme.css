@@ -1,0 +1,161 @@
+/* Theme Variables */
+:root {
+  /* Light Theme Colors */
+  --light-background: #ffffff;
+  --light-surface: #f8f9fa;
+  --light-surface-2: #f1f3f5;
+  --light-border: #e9ecef;
+  --light-text-primary: #212529;
+  --light-text-secondary: #495057;
+  --light-text-tertiary: #868e96;
+  
+  /* Primary Colors - Light */
+  --light-primary-main: #228be6;
+  --light-primary-light: #74c0fc;
+  --light-primary-dark: #1971c2;
+  --light-primary-contrast: #ffffff;
+  
+  /* Secondary Colors - Light */
+  --light-secondary-main: #fab005;
+  --light-secondary-light: #ffe066;
+  --light-secondary-dark: #e67700;
+  --light-secondary-contrast: #212529;
+  
+  /* Success Colors - Light */
+  --light-success-main: #40c057;
+  --light-success-light: #8ce99a;
+  --light-success-dark: #2b8a3e;
+  --light-success-contrast: #ffffff;
+  
+  /* Error Colors - Light */
+  --light-error-main: #fa5252;
+  --light-error-light: #ff8787;
+  --light-error-dark: #c92a2a;
+  --light-error-contrast: #ffffff;
+  
+  /* Dark Theme Colors */
+  --dark-background: #18191a;
+  --dark-surface: #242526;
+  --dark-surface-2: #3a3b3c;
+  --dark-border: #393a3b;
+  --dark-text-primary: #e4e6eb;
+  --dark-text-secondary: #b0b3b8;
+  --dark-text-tertiary: #8c8e91;
+  
+  /* Primary Colors - Dark */
+  --dark-primary-main: #339af0;
+  --dark-primary-light: #74c0fc;
+  --dark-primary-dark: #1c7ed6;
+  --dark-primary-contrast: #ffffff;
+  
+  /* Secondary Colors - Dark */
+  --dark-secondary-main: #fcc419;
+  --dark-secondary-light: #ffe066;
+  --dark-secondary-dark: #f59f00;
+  --dark-secondary-contrast: #212529;
+  
+  /* Success Colors - Dark */
+  --dark-success-main: #51cf66;
+  --dark-success-light: #8ce99a;
+  --dark-success-dark: #37b24d;
+  --dark-success-contrast: #ffffff;
+  
+  /* Error Colors - Dark */
+  --dark-error-main: #ff6b6b;
+  --dark-error-light: #ff8787;
+  --dark-error-dark: #fa5252;
+  --dark-error-contrast: #ffffff;
+  
+  /* Shadows */
+  --light-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --light-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --light-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --dark-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --dark-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --dark-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  
+  /* Transitions */
+  --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Theme Classes */
+.light {
+  /* Base */
+  --background: var(--light-background);
+  --surface: var(--light-surface);
+  --surface-2: var(--light-surface-2);
+  --border: var(--light-border);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --text-tertiary: var(--light-text-tertiary);
+  
+  /* Primary */
+  --primary-main: var(--light-primary-main);
+  --primary-light: var(--light-primary-light);
+  --primary-dark: var(--light-primary-dark);
+  --primary-contrast: var(--light-primary-contrast);
+  
+  /* Secondary */
+  --secondary-main: var(--light-secondary-main);
+  --secondary-light: var(--light-secondary-light);
+  --secondary-dark: var(--light-secondary-dark);
+  --secondary-contrast: var(--light-secondary-contrast);
+  
+  /* Success */
+  --success-main: var(--light-success-main);
+  --success-light: var(--light-success-light);
+  --success-dark: var(--light-success-dark);
+  --success-contrast: var(--light-success-contrast);
+  
+  /* Error */
+  --error-main: var(--light-error-main);
+  --error-light: var(--light-error-light);
+  --error-dark: var(--light-error-dark);
+  --error-contrast: var(--light-error-contrast);
+  
+  /* Shadows */
+  --shadow-sm: var(--light-shadow-sm);
+  --shadow-md: var(--light-shadow-md);
+  --shadow-lg: var(--light-shadow-lg);
+}
+
+.dark {
+  /* Base */
+  --background: var(--dark-background);
+  --surface: var(--dark-surface);
+  --surface-2: var(--dark-surface-2);
+  --border: var(--dark-border);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --text-tertiary: var(--dark-text-tertiary);
+  
+  /* Primary */
+  --primary-main: var(--dark-primary-main);
+  --primary-light: var(--dark-primary-light);
+  --primary-dark: var(--dark-primary-dark);
+  --primary-contrast: var(--dark-primary-contrast);
+  
+  /* Secondary */
+  --secondary-main: var(--dark-secondary-main);
+  --secondary-light: var(--dark-secondary-light);
+  --secondary-dark: var(--dark-secondary-dark);
+  --secondary-contrast: var(--dark-secondary-contrast);
+  
+  /* Success */
+  --success-main: var(--dark-success-main);
+  --success-light: var(--dark-success-light);
+  --success-dark: var(--dark-success-dark);
+  --success-contrast: var(--dark-success-contrast);
+  
+  /* Error */
+  --error-main: var(--dark-error-main);
+  --error-light: var(--dark-error-light);
+  --error-dark: var(--dark-error-dark);
+  --error-contrast: var(--dark-error-contrast);
+  
+  /* Shadows */
+  --shadow-sm: var(--dark-shadow-sm);
+  --shadow-md: var(--dark-shadow-md);
+  --shadow-lg: var(--dark-shadow-lg);
+} 
