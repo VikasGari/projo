@@ -32,7 +32,11 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://projo-bice.vercel.app',
+    credentials: true
+}));
 app.use(express.json());
 app.use(cookieParser());
 
