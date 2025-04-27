@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
 
-      const response = await axios.get(`${API_URL}/user/verify`, {
+      const response = await axios.get(new URL('/user/verify', API_URL).toString(), {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true
       });
@@ -57,7 +57,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       setError(null);
-      const response = await axios.post(`${API_URL}/user/login`, {
+      const response = await axios.post(new URL('/user/login', API_URL).toString(), {
         email,
         password
       }, {
@@ -87,7 +87,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (userData) => {
     try {
       setError(null);
-      const response = await axios.post(`${API_URL}/user`, userData, {
+      const response = await axios.post(new URL('/user', API_URL).toString(), userData, {
         withCredentials: true
       });
       
@@ -113,7 +113,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post(`${API_URL}/user/logout`, {}, {
+      await axios.post(new URL('/user/logout', API_URL).toString(), {}, {
         headers: getAuthHeader(),
         withCredentials: true
       });
@@ -128,7 +128,7 @@ export const AuthProvider = ({ children }) => {
   const updateProfile = async (profileData) => {
     try {
       setError(null);
-      const response = await axios.put(`${API_URL}/user/profile`, profileData, {
+      const response = await axios.put(new URL('/user/profile', API_URL).toString(), profileData, {
         headers: getAuthHeader(),
         withCredentials: true
       });
