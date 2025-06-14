@@ -105,10 +105,6 @@ cd backend
 npm start
 ```
 
-## 📝 API Documentation
-
-The API documentation is available at `/api-docs` when running the backend server.
-
 ## 🔒 Security
 
 - JWT-based authentication
@@ -130,5 +126,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
-- Thanks to all contributors who have helped shape this project
-- Special thanks to the open-source community for the amazing tools and libraries 
+- Thanks to the open-source community for the amazing tools and libraries 
