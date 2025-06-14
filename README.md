@@ -122,7 +122,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 👥 Authors
 
-- Vikas Gari - Initial work
+- [Vikas Gari](https://github.com/VikasGari) - Initial work
 
 ## 🙏 Acknowledgments
 
